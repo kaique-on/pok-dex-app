@@ -29,20 +29,20 @@ class PokedexHome extends StatelessWidget {
           ), 
           itemCount: lista.length,
           itemBuilder: (context, index){
-            return Card(
-              
-      color: lista[index].tipo == "Grama"?  Colors.green[300]: lista[index].tipo == "Fogo"? Colors.red[300]: lista[index].tipo == "Água"? Colors.blue[300]: lista[index].tipo == "Inseto"? Colors.green[700]: Colors.grey[300],
-      elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: GestureDetector(
+            return GestureDetector(
         onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> PokeDetails(index: index))),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+              child: Card(
+                
+                    color: lista[index].tipo == "Grama"?  Colors.green[300]: lista[index].tipo == "Fogo"? Colors.red[300]: lista[index].tipo == "Água"? Colors.blue[300]: lista[index].tipo == "Inseto"? Colors.green[700]: Colors.grey[300],
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
@@ -86,11 +86,11 @@ class PokedexHome extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
-    );
+                        ],
+                      ),
+                    ),
+                  ),
+            );
           }),
         )  
   );}
