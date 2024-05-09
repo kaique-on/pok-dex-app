@@ -12,7 +12,8 @@ class PokemonController {
         tipoSecundario: "Veneno", 
         descricao: "Um dos pokemons iniciais",
         movimentos: [Habilidade(ataque: 50, nome: "Chicote de grama", tipo: "Grama")],
-        url: "https://static.wikia.nocookie.net/pokepediabr/images/3/3c/001Bulbassauro.png/revision/latest?cb=20210330173024&path-prefix=pt-br"),
+        url: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png"
+        ),
        Pokemon(
         numero:2,
         name:"Ivysaur",
@@ -162,4 +163,13 @@ class PokemonController {
     ];
 
     List<Pokemon> get poke_lista => _poke_lista;
+
+    pesquisar(String procura){
+      for (Pokemon poke in poke_lista){
+        if (poke.name == procura){
+          return poke;
+        }
+      }
+      return null;
+    }
 }
